@@ -60,7 +60,7 @@ class ClimbsController < ApplicationController
   def update_row
     @climb = Climb.find(params.fetch("id_to_modify"))
 
-    @climb.user_id = params.fetch("user_id")
+    
     @climb.location_id = params.fetch("location_id")
     @climb.rating = params.fetch("rating")
     @climb.picture = params.fetch("picture") if params.key?("picture")
