@@ -1,0 +1,91 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Climb #<%= @climb.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/climbs" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link climb start -->
+      <div class="col">
+        <a href="/climbs/<%= @climb.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit climb
+        </a>
+      </div>
+      <!-- Edit link climb end -->
+
+      <!-- Delete link climb start -->
+      <div class="col">
+        <a href="/delete_climb/<%= @climb.id %>" class="btn btn-block btn-outline-secondary">
+          Delete climb
+        </a>
+      </div>
+      <!-- Delete link climb end -->
+    </div>
+
+    <dl>
+      <dt>
+        User
+      </dt>
+      <!-- Display user_id start -->
+      <dd>
+        <%= @climb.user_id %>
+      </dd>
+      <!-- Display user_id end -->
+
+      <dt>
+        Location
+      </dt>
+      <!-- Display location_id start -->
+      <dd>
+        <%= @climb.location_id %>
+      </dd>
+      <!-- Display location_id end -->
+
+      <dt>
+        Rating
+      </dt>
+      <!-- Display rating start -->
+      <dd>
+        <%= @climb.rating %>
+      </dd>
+      <!-- Display rating end -->
+
+      <dt>
+        Picture
+      </dt>
+      <!-- Display picture start -->
+      <dd>
+        <%= @climb.picture %>
+      </dd>
+      <!-- Display picture end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@climb.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@climb.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
