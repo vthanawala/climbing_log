@@ -4,6 +4,8 @@ RSpec.describe Climb, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:location) }
+
     it { should belong_to(:user) }
 
     end
