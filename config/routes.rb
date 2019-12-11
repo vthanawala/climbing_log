@@ -37,6 +37,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_climb/:id_to_remove", { :controller => "climbs", :action => "destroy_row" })
+  get("/delete_climb_from_location/:id_to_remove", { :controller => "climbs", :action => "destroy_row_from_location" })
+  get("/delete_climb_from_user/:id_to_remove", { :controller => "climbs", :action => "destroy_row_from_user" })
 
   #------------------------------
 

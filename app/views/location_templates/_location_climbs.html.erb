@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Climbs
+
+    <a data-toggle="collapse" href="#location_climbs_new_form">
+      Add climb
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @location.climbs.each do |climb| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/climbs/<%= climb.id %>">
+          <%= climb.user_id %>
+        </a>
+        <!-- Show link end -->
+
+        <!-- Delete link start -->
+        <a href="/delete_climb_from_location/<%= climb.id %>">
+          Delete
+        </a>
+        <!-- Delete link end -->
+
+      </li>
+    <% end %>
+
+    <div class="card-footer">
+      <div class="collapse" id="location_climbs_new_form">
+        <!-- New associationcollection form start -->
+
+        <!-- New associationcollection form end -->
+      </div>
+    </div>
+
+  </ul>
+</div>

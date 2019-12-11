@@ -57,6 +57,22 @@ class ClimbsController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @climb = Climb.find(params.fetch("id_to_remove"))
+
+    @climb.destroy
+
+    redirect_to("/users/#{@climb.user_id}", notice: "Climb deleted successfully.")
+  end
+
+  def destroy_row_from_location
+    @climb = Climb.find(params.fetch("id_to_remove"))
+
+    @climb.destroy
+
+    redirect_to("/locations/#{@climb.location_id}", notice: "Climb deleted successfully.")
+  end
+
   def destroy_row
     @climb = Climb.find(params.fetch("id_to_remove"))
 
