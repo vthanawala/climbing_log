@@ -34,6 +34,23 @@ class ClimbsController < ApplicationController
     end
   end
 
+  def create_row_from_location
+    @climb = Climb.new
+
+    @climb.user_id = params.fetch("user_id")
+    @climb.location_id = params.fetch("location_id")
+    @climb.rating = params.fetch("rating")
+    @climb.picture = params.fetch("picture")
+
+    if @climb.valid?
+      @climb.save
+
+      redirect_to("/locations/#{@climb.location_id}", notice: "Climb created successfully.")
+    else
+      render("climb_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @climb = Climb.find(params.fetch("prefill_with_id"))
 

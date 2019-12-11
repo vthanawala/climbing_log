@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/climbs/new", { :controller => "climbs", :action => "new_form" })
   post("/create_climb", { :controller => "climbs", :action => "create_row" })
+  post("/create_climb_from_location", { :controller => "climbs", :action => "create_row_from_location" })
 
   # READ
   get("/climbs", { :controller => "climbs", :action => "index" })
