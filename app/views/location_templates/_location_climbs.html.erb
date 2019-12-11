@@ -17,9 +17,11 @@
         <!-- Show link end -->
 
         <!-- Delete link start -->
-        <a href="/delete_climb_from_location/<%= climb.id %>">
-          Delete
-        </a>
+        <%if current_user == climb.user %>
+          <a href="/delete_climb_from_location/<%= climb.id %>">
+            Delete
+          </a>
+        <% end %>
         <!-- Delete link end -->
 
       </li>

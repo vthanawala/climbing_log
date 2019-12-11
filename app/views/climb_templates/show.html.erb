@@ -13,17 +13,21 @@
 
       <!-- Edit link climb start -->
       <div class="col">
-        <a href="/climbs/<%= @climb.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit climb
-        </a>
+        <% if current_user == @climb.user %>
+          <a href="/climbs/<%= @climb.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit climb
+          </a>
+        <% end %>
       </div>
       <!-- Edit link climb end -->
 
       <!-- Delete link climb start -->
       <div class="col">
-        <a href="/delete_climb/<%= @climb.id %>" class="btn btn-block btn-outline-secondary">
-          Delete climb
-        </a>
+        <% if current_user == @climb.user %>
+          <a href="/delete_climb/<%= @climb.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete climb
+          </a>
+        <% end %>
       </div>
       <!-- Delete link climb end -->
     </div>
