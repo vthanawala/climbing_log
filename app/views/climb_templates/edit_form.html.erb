@@ -5,7 +5,7 @@
 <hr>
 
 <!-- Form climb start -->
-<form action="/update_climb/<%= @climb.id %>" method="post">
+<form action="/update_climb/<%= @climb.id %>" method="post" enctype="multipart/form-data">
 <!-- Form climb end -->
 
   <!-- Label and input for user_id start -->
@@ -51,7 +51,8 @@
     </label>
 
     <!-- Input for picture start -->
-    <input type="text" id="picture" name="picture" class="form-control" value="<%= @climb.picture %>">
+    <%= cl_image_tag(@climb.picture.to_s, :width => 90, :height => 90, :crop => :thumb) %>
+    <input type="file" id="picture" name="picture" class="form-control">
     <!-- Input for picture end -->
   </div>
   <!-- Label and input for picture end -->

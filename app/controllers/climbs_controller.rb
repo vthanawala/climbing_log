@@ -23,7 +23,7 @@ class ClimbsController < ApplicationController
     @climb.user_id = params.fetch("user_id")
     @climb.location_id = params.fetch("location_id")
     @climb.rating = params.fetch("rating")
-    @climb.picture = params.fetch("picture")
+    @climb.picture = params.fetch("picture") if params.key?("picture")
 
     if @climb.valid?
       @climb.save
@@ -40,7 +40,7 @@ class ClimbsController < ApplicationController
     @climb.user_id = params.fetch("user_id")
     @climb.location_id = params.fetch("location_id")
     @climb.rating = params.fetch("rating")
-    @climb.picture = params.fetch("picture")
+    @climb.picture = params.fetch("picture") if params.key?("picture")
 
     if @climb.valid?
       @climb.save
@@ -63,7 +63,7 @@ class ClimbsController < ApplicationController
     @climb.user_id = params.fetch("user_id")
     @climb.location_id = params.fetch("location_id")
     @climb.rating = params.fetch("rating")
-    @climb.picture = params.fetch("picture")
+    @climb.picture = params.fetch("picture") if params.key?("picture")
 
     if @climb.valid?
       @climb.save
