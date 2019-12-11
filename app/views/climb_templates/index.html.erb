@@ -66,13 +66,21 @@
 
         <!-- Display climb.user_id start -->
         <td>
-          <%= climb.user.email %>
+          <% if climb.user.present? %>
+            <a href="/users/<%= climb.user.id %>">
+              <%= climb.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display climb.user_id end -->
 
         <!-- Display climb.location_id start -->
         <td>
-          <%= climb.location.city %>
+          <% if climb.location.present? %>
+            <a href="/locations/<%= climb.location.id %>">
+              <%= climb.location.city %>
+            </a>
+          <% end %>
         </td>
         <!-- Display climb.location_id end -->
 

@@ -38,7 +38,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @climb.user_id %>
+        <% if @climb.user.present? %>
+          <a href="/users/<%= @climb.user_id %>">
+            <%= @climb.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 
@@ -47,7 +51,11 @@
       </dt>
       <!-- Display location_id start -->
       <dd>
-        <%= @climb.location_id %>
+        <% if @climb.location.present? %>
+          <a href="/locations/<%= @climb.location_id %>">
+            <%= @climb.location.city %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display location_id end -->
 
