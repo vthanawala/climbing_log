@@ -1,41 +1,24 @@
-<!-- Form climb start -->
 <form action="/create_climb" method="post" enctype="multipart/form-data">
-<!-- Form climb end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Input for "user_id" start -->
   <input type="hidden" name="user_id" value="<%= current_user.id %>">
-  <!-- Input for "user_id" end -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for location_id start -->
-  <!-- Input for location_id start -->
   <input type="hidden" name="location_id" value="<%= @location.id %>">
-  <!-- Input for location_id end -->
 
-  <!-- Label and input for rating start -->
   <div class="form-group">
     <label for="rating">
       Rating
     </label>
 
-    <!-- Input for rating start -->
     <input type="text" id="rating" name="rating" class="form-control" value="<%= @climb.rating %>">
-    <!-- Input for rating end -->
   </div>
-  <!-- Label and input for rating end -->
 
-  <!-- Label and input for picture start -->
   <div class="form-group">
     <label for="picture">
       Picture
     </label>
 
-    <!-- Input for picture start -->
     <input type="file" id="picture" name="picture" class="form-control">
-    <!-- Input for picture end -->
   </div>
-  <!-- Label and input for picture end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create climb

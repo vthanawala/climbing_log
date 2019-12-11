@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @climb.errors.any? %>
   <% @climb.errors.full_messages.each do |message| %>
     <div class="alert">
@@ -13,49 +12,33 @@
 
 <hr>
 
-<!-- Form climb start -->
 <form action="/update_climb/<%= @climb.id %>" method="post" enctype="multipart/form-data">
-<!-- Form climb end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for location_id start -->
   <div class="form-group">
     <label for="location_id">
       Location
     </label>
 
-    <!-- Input for location_id start -->
     <%= select_tag(:location_id, options_from_collection_for_select(Location.all, :id, :city, @climb.location_id), :class => "form-control") %>
-    <!-- Input for location_id end -->
   </div>
-  <!-- Label and input for location_id end -->
 
-  <!-- Label and input for rating start -->
   <div class="form-group">
     <label for="rating">
       Rating
     </label>
 
-    <!-- Input for rating start -->
     <input type="text" id="rating" name="rating" class="form-control" value="<%= @climb.rating %>">
-    <!-- Input for rating end -->
   </div>
-  <!-- Label and input for rating end -->
 
-  <!-- Label and input for picture start -->
   <div class="form-group">
     <label for="picture">
       Picture
     </label>
 
-    <!-- Input for picture start -->
     <%= cl_image_tag(@climb.picture.to_s, :width => 90, :height => 90, :crop => :thumb) %>
     <input type="file" id="picture" name="picture" class="form-control">
-    <!-- Input for picture end -->
   </div>
-  <!-- Label and input for picture end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update climb
